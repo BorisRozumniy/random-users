@@ -2,7 +2,8 @@ import { UpdateButton } from "./components/UpdateButton";
 import { Users } from "./components/Users";
 import { AppProvider } from "./store/context";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { theme } from "./styles/theme";
+import { GlobalStyle } from "./styles/global-style";
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
         <Users />
         <UpdateButton />
       </ThemeProvider>
+      <GlobalStyle />
     </AppProvider>
   );
 };

@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { IUser } from "../@types/user";
 
 type Props = {
@@ -5,12 +6,33 @@ type Props = {
 };
 
 export const User = ({ user }: Props) => (
-  <div>
-    <img src={user.picture.thumbnail} alt="photo" />
+  <Wrapper>
+    <Photo src={user.picture.thumbnail} alt="photo" />
     <p>
-      {`${user.name.first} ${user.name.last}`}
+      <Name>{`${user.name.first} ${user.name.last}`}</Name>
       <br />
-      <span>{user.email}</span>
+      <Email>{user.email}</Email>
     </p>
-  </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  padding: 8px;
+  background-color: ${({ theme }) => theme.colors.black1};
+  border-radius: 50px;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+const Photo = styled.img`
+  border-radius: 50%;
+`;
+
+const Name = styled.span`
+  font-weight: 600;
+`;
+const Email = styled.span`
+  font-size: 14px;
+`;
