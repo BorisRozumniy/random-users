@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IUser } from "../@types/user";
+import EmailIcon from "../assets/email.svg";
 
 type Props = {
   user: IUser;
@@ -11,6 +12,7 @@ export const User = ({ user }: Props) => (
     <p>
       <Name>{`${user.name.first} ${user.name.last}`}</Name>
       <br />
+      <Icon src={EmailIcon} alt="Email" />
       <Email>{user.email}</Email>
     </p>
   </Wrapper>
@@ -24,6 +26,13 @@ const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black1};
   border-radius: 50px;
   color: ${({ theme }) => theme.colors.black};
+`;
+
+const Icon = styled.img`
+  height: 15px;
+  margin-right: 7px;
+  position: relative;
+  top: 3px;
 `;
 
 const Photo = styled.img`
