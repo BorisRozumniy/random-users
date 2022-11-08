@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { IUser } from "../@types/user";
 import EmailIcon from "../assets/email.svg";
+import PersonIcon from "../assets/person.svg";
 
 type Props = {
   user: IUser;
@@ -10,6 +11,7 @@ export const User = ({ user }: Props) => (
   <Wrapper>
     <Photo src={user.picture.thumbnail} alt="photo" />
     <p>
+      <Icon src={PersonIcon} alt="Person" />
       <Name>{`${user.name.first} ${user.name.last}`}</Name>
       <br />
       <Icon src={EmailIcon} alt="Email" />
